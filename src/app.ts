@@ -1,12 +1,14 @@
 import express, {Express, Request, Response} from "express";
+import { createUser } from "./services/users/createUser";
+import { getAllUsers } from "./services/users/getAllUsers";
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("detka ty lubish rvanye djinsy");
+    res.send(createUser());
 });
 
 app.get("/da", (req, res) => {
-    res.send("ya debil da da da, no takih kak ya dohuya");
+    res.send(getAllUsers());
 });
 
 app.listen(3000, () => {
