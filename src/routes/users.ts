@@ -2,7 +2,7 @@ import { createUser } from "../services/users";
 import { getAllUsers } from "../services/users"; 
 import { Express } from "express";
 
-export const router = express.Router();
+export const usersRouter = express.Router();
 
 router.get("/", (req, res) => {
     res.send(getAllUsers);
