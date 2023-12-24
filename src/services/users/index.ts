@@ -1,6 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "../prisma";
 
 export async function createUser() {
     const user = await prisma.users.create({
@@ -10,4 +8,9 @@ export async function createUser() {
         },
     });
     console.log(user);
+}
+
+export async function getAllUsers() {
+    const users = await prisma.users.findMany;
+    console.log(users);
 }

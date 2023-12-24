@@ -1,8 +1,8 @@
-import { createUser } from "../services/users/createUser";
-import { getAllUsers } from "../services/users/getAllUsers";
+import { createUser } from "../services/users"; 
+import { getAllUsers } from "../services/users"; 
+import { Express } from "express";
 
-const express = require("express");
-const router = express.Router();
+export const router = express.Router();
 
 router.get("/", (req, res) => {
     res.send(getAllUsers);
@@ -24,4 +24,3 @@ router.delete("/:id", (req, res) => {
     res.send("delete nigga");
 });
 
-module.exports = router;
