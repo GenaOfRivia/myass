@@ -7,7 +7,11 @@ usersRouter.get("/", (req, res) => {
     res.send(getAllUsers);
 });
 
-usersRouter.post("/", (req, res) => {
+usersRouter.get("/create", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+
+usersRouter.post("/create", (req, res) => {
     res.send(createUser);
 });
 
